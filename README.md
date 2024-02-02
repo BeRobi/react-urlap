@@ -1,3 +1,41 @@
+### 1. `KOMPONENS`<br>
+a React legfontosabb építőegysége. A Reacttal épített appokban gyakorlatilag minden komponensekből áll. 
+A komponens a UI egy önálló, újrafelhasználható darabja, amely egy jól körülírt feladatot lát el. A komponensek egymástól független, önmagukban megálló kóddarabok. 
+Kétfajta komponens létezik a Reactban:<br>
+• a function component és<br>
+• a class component.<br>
+Mindkettő befogad adatokat a props objektumon keresztül, és mindkettő React-elemeket ad vissza, amelyek leírják, hogy mi jelenjen meg a képernyőn.
+A React-komponensek koncepcionálisan olyanok, mint a JavaScript-függvények. Inputot fogadnak be a props objektumon keresztül, és React-elemeket adnak vissza, amelyek leírják, hogy mi történjen a képernyőn.
+
+### 2. `JSX`<br>
+egy „syntax extension”, amellyel  HTML-szerűen írhatunk  a JavaScriptünkbe. Rendereléskor a React JS kóddá alakítja. NEM HTML! 
+
+### 3. `PROPS`<br>
+segítségével adatokat adhatunk át a komponensek között.
+Mindig a szülő komponens adja át a gyerek komponensnek a paraméterként megadott adatot.
+Értéke a gyerekelemben nem változtatható.
+A props lehetővé teszi, hogy a state-ben tárolt adatokat a gyermekek is megkaphassák.
+A szülőelem a props-ban átadja a saját függvényét, melyet a gyerekelemben meghívhatunk.
+Egy  komponens sosem módosíthatja a saját props-át!
+A  `props` segítségével saját state-et módosító metódusokat is át tudunk adni a gyermekkomponenseknek, ezzel lehetővé téve, hogy a gyermek frissítse a state-et.
+
+### 4. `STATE`<br>
+minden komponensnek van egy saját állapota, melyet a STATE reprezentál. A state állapotértékeinek megváltoztatásával automatikusan újragenerálódik a komponens. 
+Függvénykomponensek esetén ehhez a useState hook-ot használjuk.
+A props nem módosítható, a state viszont igen!
+State elérése: this.state.kulcsNév
+State beállítása
+const [state, setState] = useState("kezdoertek");
+setState( state uj értéke )  függvénnyel tudjuk megváltoztatni. 
+A setState meghívásával újrarendelerődik a komponens. 
+A változás nem biztos, hogy azonnal megtörténik. 
+A state-t a közös ősben kell létrehozni az eseménykezelőkkel.
+A state objektum  csak az azt birtokló komponens számára hozzáférhető, csak az módosíthatja! A gyerekkomponensek nem! A benne tárolt adat pedig a komponens gyerekei számára is hozzáférhető a props-okon keresztül. 
+Ha egy adathoz több komponensnek is hozzá kell férni, akkor a legközelebbi közös őst és abban tároljuk. 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
